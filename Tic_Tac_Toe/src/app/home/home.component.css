@@ -4,6 +4,15 @@
     flex-flow: column;   
     text-align: center;   
 }
+
+.startbutton{
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color:whitesmoke;
+    padding: 0.5em;
+    border-radius: 15px;
+}
 .matrix{
     display: flex;
     justify-content: center;
@@ -30,8 +39,10 @@
 }
 
 .gridContent{   
-    padding: 1rem;   
-    background-color: aliceblue;    
+    padding: 1rem; 
+    height: 6rem;      
+    background-color: aliceblue;  
+    
 }
 
 .Players{

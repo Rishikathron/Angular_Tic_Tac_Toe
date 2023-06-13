@@ -7,6 +7,27 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  
-  
+  playerx : boolean = false;
+  playero : boolean = false;
+  started : boolean = false;
+
+  onClick(){   
+    console.log("onclick called");
+    this.playerx = !this.playero;
+    this.playero = !this.playerx;
+    // if(this.playerx == false){
+      
+    //   }   
+    // if(this.playero == false)
+    // {
+    //   this.playero = true;
+    //   this.playerx = false;
+    // }
+  }
+
+  start(){
+    if(this.started == false){
+      this.started = true;
+    }
+  }
 }

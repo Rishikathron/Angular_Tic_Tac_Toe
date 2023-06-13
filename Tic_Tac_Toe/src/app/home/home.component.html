@@ -9,22 +9,87 @@
         <div class="player2"> 
             <h2>PlayerName : 0</h2>
         </div>
-    </div>  
+    </div>      
+    <div class="startbuttonDiv">
+        <button class = "startbutton"  (click)= "start()">S T A R T</button>
+    </div>
 
-    <div class="matrix">
+    <div class="matrix" *ngIf= "started">
         <div class="Block">
             <div class="Grid">
-                <div class="gridContent">
-                    <span class = "Icn" >&#10005;1</span>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
                 </div>
-                <div class="gridContent"><span class = "Icn" >&#10005;2</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;3</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;4</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;5</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;6</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;7</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005;8</span></div>
-                <div class="gridContent"><span class = "Icn" >&#10005; 9</span></div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                <div class="gridContent" (click) = "onClick()">                    
+                    <div *ngIf= "playerx">
+                        <span class = "Icn" >&#10005;</span>
+                    </div>  
+                    <div *ngIf= "playero">
+                        <span class = "Icn" >O</span>
+                    </div>                   
+                </div>
+                
             </div>        
         </div>
     </div>  
