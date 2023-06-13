@@ -1,0 +1,42 @@
+.game{
+    display: flex;
+    gap: 2rem;
+    flex-flow: column;   
+    text-align: center;   
+}
+.matrix{
+    display: flex;
+    justify-content: center;
+}
+
+.Block{  
+    background-color: red;  
+    position: fixed;    
+    border: 5px solid black ;
+}
+.Grid{
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(3,10rem);
+    align-items: center;
+    
+}
+.Icn{
+    font-size: 70px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.gridContent{   
+    padding: 1rem;   
+    background-color: aliceblue;    
+}
+
+.Players{
+    display: flex;
+    flex-flow: row;
+    gap: 35rem;
+    justify-content: center;
+}
