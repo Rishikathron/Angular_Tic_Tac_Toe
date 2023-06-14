@@ -19,18 +19,26 @@ export class HomeComponent implements OnChanges {
 
   playerx : boolean = false;
   counter : number = 0;
-  // playero : boolean = false;
 
   started : boolean = false;
   stopped : boolean = false;
 
   winner_X : boolean = false;
   winner_O : boolean = false;
+  Draw : boolean = false;
   
   start(){
     if(this.started == false){
-      this.started = true;
+      this.started = true;      
     }
+  }
+
+  clear(){
+    this.Playero_Arr = Array(3).fill(0).map(() => Array(3));
+    this.Playerx_Arr = Array(3).fill(0).map(() => Array(3));
+    console.log(this.Playero_Arr + " and x is " + this.Playerx_Arr);
+    this.counter = 0
+    this.playerx = false;    
   }
 
   onClick(row : number, col : number ){ 
@@ -66,8 +74,14 @@ export class HomeComponent implements OnChanges {
       console.log("Winner is declared : winnerx" + this.winner_X + "winnerO" + this.winner_O );      
       return;
     }
-  }
 
+    if (this.counter == 9) {
+      this.stopped = true;
+      console.log("Game Draw");   
+      this.Draw = true;   
+      return ;
+    }
+  }
 
   checkGameEnd(arr : Array<any>) : boolean{
       
@@ -83,7 +97,7 @@ export class HomeComponent implements OnChanges {
           else if (arr[2][0] == 1 && arr[0][2] == 1 ) {
             return true;
           }
-          else if (arr[0][0] == 1 && arr[2][0] == 1) {
+          else if (arr[0][0] == 1 && arr[2][2] == 1) {
             return true;
           }
       }

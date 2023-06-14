@@ -1,3 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    margin-top: 2rem;
+}
+
 .game{
     display: flex;
     gap: 2rem;
@@ -5,14 +14,15 @@
     text-align: center;   
 }
 
-.startbutton{
-
-    font-size: 1.5rem;
+.startbutton, .clearButton{
+    font-size: 1.5rem;    
     font-weight: bold;
     background-color:whitesmoke;
     padding: 0.5em;
     border-radius: 15px;
 }
+
+
 .matrix{
     display: flex;
     justify-content: center;
@@ -41,13 +51,22 @@
 .gridContent{   
     padding: 1rem; 
     height: 6rem;      
-    background-color: aliceblue;  
-    
+    background-color: aliceblue;      
 }
 
 .Players{
     display: flex;
     flex-flow: row;
-    gap: 35rem;
+    gap: 20rem;
     justify-content: center;
+}
+
+.PlayerTurn{
+    font-size: larger;
+    color: blueviolet;
+}
+
+.GameStatus{
+    padding: 1rem;
+    color: blueviolet;
 }

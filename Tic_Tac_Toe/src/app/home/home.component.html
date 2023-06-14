@@ -2,16 +2,23 @@
 
     <div class="heading"><h1>Tic Tac Toe</h1></div>
 
-    <div class="Players">
+    <div class="Players" *ngIf="!stopped">
         <div class="player1">
-            <h2>PlayerName : 0</h2>
+            <h2>PlayerX <span *ngIf= "!playerx && started && !stopped " class="PlayerTurn"> Turn </span> </h2>
         </div>
         <div class="player2"> 
-            <h2>PlayerName : 0</h2>
-        </div>
-    </div>      
+            <h2>PlayerO <span *ngIf= "playerx && started && !stopped" class="PlayerTurn">Turn</span> </h2>
+        </div>                
+    </div>    
+    <div>
+        <h1 *ngIf= "stopped && playerx && !Draw" class="GameStatus"> Player X Won </h1>
+        <h1 *ngIf= "stopped && !playerx && !Draw" class="GameStatus"> Player O Won</h1>
+        <h1 *ngIf= "stopped && Draw " class="GameStatus"> MATCH DRAW </h1>
+    </div>
+
     <div class="startbuttonDiv">
-        <button class = "startbutton"  (click)= "start()">S T A R T</button>
+        <button *ngIf="!started" class = "startbutton"  (click)= "start()"> S T A R T </button>
+        <button *ngIf="started" class = "clearButton" (click) = "clear()"> N E W  G A M E </button>
     </div>
 
     <div class="matrix" *ngIf= "started">
@@ -92,7 +99,9 @@
                 
             </div>        
         </div>
-    </div>  
+    </div> 
+    
+    
 
 </div>
 
