@@ -1,0 +1,32 @@
+<div class="LandingPage">
+    <div class="heading">
+        <h1>TIK TAK TOE</h1>
+    </div>
+    
+    <div class="PlayerInput">
+        <div class="forms">
+
+            <div *ngIf = "PlayerInputx_boolean" class="PlayerInputDetails">
+                <h2>Enter the name for Player <span>X</span></h2>
+                <input id="playerx" type = "text" [formControl] = "PlayerX_Name">                
+            </div>
+
+            <div *ngIf = "PlayerInputo_boolean">
+                <div class = "PlayerInputDetails">
+                    <h2>Enter the name for Player<span>Y</span></h2>
+                    <input type = "text" [formControl] = "PlayerO_Name">
+                </div>                               
+            </div>
+
+            <div class="PlayerInput_button" *ngIf="!PlayGame_boolean">
+                <button (click) = "doneClick()" class="Gbutton donebtn">D O N E</button>
+            </div>
+            <div class="playbutton" *ngIf="PlayGame_boolean" >
+                <button class="Gbutton playgame" (click) = "PlayGame()" [routerLink]="'/Play'">P L A Y G A M E</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>

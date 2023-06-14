@@ -1,21 +1,28 @@
-import { Component,OnChanges, SimpleChanges } from '@angular/core';
+import { Component,OnInit, SimpleChanges } from '@angular/core';
+import { GameService } from '../Services/game.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnChanges {
+export class HomeComponent  {
 
-  ngOnChanges(changes: SimpleChanges): void {
-      
+  constructor(private _gameService : GameService){}
+
+  ngOnInit(): void {
+    this.PlayerX_Name =  this._gameService.X_Name;
+    this.PlayerO_Name = this._gameService.O_Name;
+    console.log(this.PlayerO_Name,this.PlayerX_Name);
+    
   }
+  
 
   Playerx_Arr : number[][] = [[0,0,0],[0,0,0],[0,0,0]];
   Playero_Arr : number[][] = [[0,0,0],[0,0,0],[0,0,0]];
 
-  PlayerX_Name : string = "";
-  PlayerO_Name : string = "";
+  PlayerX_Name ?: string = "";
+  PlayerO_Name ?: string = "";
 
   playerx : boolean = false;
   counter : number = 0;

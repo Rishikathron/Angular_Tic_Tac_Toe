@@ -4,15 +4,16 @@
 
     <div class="Players" *ngIf="!stopped">
         <div class="player1">
-            <h2>PlayerX <span *ngIf= "!playerx && started && !stopped " class="PlayerTurn"> Turn </span> </h2>
+            <h2>{{PlayerX_Name}}<span *ngIf= "!playerx && started && !stopped " class="PlayerTurn"> Turn-X </span> </h2>
         </div>
         <div class="player2"> 
-            <h2>PlayerO <span *ngIf= "playerx && started && !stopped" class="PlayerTurn">Turn</span> </h2>
+            <h2>{{PlayerO_Name}} <span *ngIf= "playerx && started && !stopped" class="PlayerTurn">Turn-O</span> </h2>
         </div>                
-    </div>    
+    </div>   
+
     <div>
-        <h1 *ngIf= "stopped && playerx && !Draw" class="GameStatus"> Player X Won </h1>
-        <h1 *ngIf= "stopped && !playerx && !Draw" class="GameStatus"> Player O Won</h1>
+        <h1 *ngIf= "stopped && playerx && !Draw" class="GameStatus"> {{ PlayerX_Name }} Won </h1>
+        <h1 *ngIf= "stopped && !playerx && !Draw" class="GameStatus"> {{PlayerO_Name}} Won</h1>
         <h1 *ngIf= "stopped && Draw " class="GameStatus"> MATCH DRAW </h1>
     </div>
 
@@ -100,8 +101,6 @@
             </div>        
         </div>
     </div> 
-    
-    
 
 </div>
 
