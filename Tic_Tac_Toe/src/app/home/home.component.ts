@@ -34,11 +34,15 @@ export class HomeComponent implements OnChanges {
   }
 
   clear(){
-    this.Playero_Arr = Array(3).fill(0).map(() => Array(3));
-    this.Playerx_Arr = Array(3).fill(0).map(() => Array(3));
+
+    this.Playero_Arr = [[0,0,0],[0,0,0],[0,0,0]];
+    this.Playerx_Arr = [[0,0,0],[0,0,0],[0,0,0]];
     console.log(this.Playero_Arr + " and x is " + this.Playerx_Arr);
     this.counter = 0
-    this.playerx = false;    
+    this.playerx = false;  
+    this.winner_O = this.winner_X = false;
+    this.started = false;
+    this.stopped = false;
   }
 
   onClick(row : number, col : number ){ 
@@ -83,10 +87,8 @@ export class HomeComponent implements OnChanges {
     }
   }
 
-  checkGameEnd(arr : Array<any>) : boolean{
-      
-      let sum_tb = 0;
-      let sum_lr = 0;      
+  checkGameEnd(arr : Array<any>) : boolean{     
+          
       if(arr[1][1] == 1){
           if (arr[1][0] == 1 && arr[1][2] == 1) {
               return true;
@@ -101,7 +103,10 @@ export class HomeComponent implements OnChanges {
             return true;
           }
       }
+
       if (arr[0][0] == 1) {
+        let sum_tb = 0;
+        let sum_lr = 0;  
         for (let index = 0; index < arr.length; index++) {
           sum_lr += arr[0][index];          
           sum_tb += arr[index][0];        
@@ -111,6 +116,8 @@ export class HomeComponent implements OnChanges {
         }                 
       }
       if(arr[2][2] == 1){
+        let sum_tb = 0;
+        let sum_lr = 0;  
         for (let index = 0; index < arr.length; index++) {
           sum_lr += arr[2][index];          
           sum_tb += arr[index][2];        
@@ -128,7 +135,5 @@ export class HomeComponent implements OnChanges {
     }
     return false;
   }
-
-
 
 }
